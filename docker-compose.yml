@@ -1,0 +1,10 @@
+services:
+  jupyterlab:
+    build: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./work:/workspace/work
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    restart: unless-stopped
